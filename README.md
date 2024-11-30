@@ -19,9 +19,34 @@ end
 
 camera:draw(drawCallback); -- call :draw() on camera with callback function as input
 ```
-### Functions
-a created camera object has many different functions that you call to modify its output image
 
+### components of a camera
+#### position
+x and y of the camera (higher x goes to the right, higher y goes down)
+#  
+#### scale
+width and height factor of the camera (higher means more zoom)
+#  
+#### rotation
+rotation component of the camera (higher is more clockwise)
+#  
+#### paralax effect
+paralx effect of the camera (1- lessens position (background elements), 1 is normal, 1+ amplifies position (foreground elements))
+#  
+#### draw area
+x, y, w, and h of the draw area, as a rectangle in the window (default is 0,0, screenWidth,screenHeight)
+#  
+#### center
+x and y of the origin of the camera, the point that is rotated around
+#  
+
+### Functions
+#### a created camera object has many different functions that you call to modify its output image
+#  
+```lua
+Ecamira([drawX / canvas / texture, drawY, drawW, drawH]);
+```
+when calling Ecamira for a new camera object, optional inputs set the draw area of the camera, if a canvas (or something with a :getWidth() and :getHeight() function) is inputted then it will use the width and height of the input as the width and height of the camera draw area
 ```lua
 camera:draw(callback);
 ```
